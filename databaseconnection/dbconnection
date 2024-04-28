@@ -1,0 +1,14 @@
+import pandas as pd
+import sqlite3
+
+# Connect to the SQLite database
+conn = sqlite3.connect('telecom.db')
+
+# Query data from the database using SQL
+query = "SELECT * FROM telecom_data"
+
+# Load the queried data into a Pandas DataFrame
+telecom_data = pd.read_sql_query(query, conn)
+
+# Close the database connection
+conn.close()
